@@ -1,0 +1,15 @@
+# Binarios compilados
+exp1
+exp2
+*.o
+
+# Datos y librerías (se descargan, no se versionan)
+DIV2K_valid_LR_bicubic/
+*.zip
+CImg.h
+
+# Salidas intermedias
+*.csv
+
+# Sistema
+.DS_Store
