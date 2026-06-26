@@ -9,7 +9,9 @@ Cálculo de la matriz de covarianza de un conjunto de imágenes sobre GPU usando
 
 - `experimento1.cu` — Versión tradicional: se carga todo el dataset contiguo en la GPU con una copia sincrónica y se calcula la covarianza con tres kernels (promedio, centrado y multiplicación matricial `Vbar^T * Vbar` con *tiling* en memoria compartida).
 - `experimento2.cu` — Versión optimizada con CUDA Streams: memoria anclada (*pinned*) + copias asíncronas para solapar transferencia y cómputo. La covarianza se acumula de forma incremental usando la identidad `C = (1/m) sum(v v^T) - mu mu^T`. La cantidad de streams, el tamaño de batch y el tamaño de imagen son configurables.
-- `informe.pdf` — Informe con la metodología, tablas de tiempos, gráficos de *speedup*, diagrama de solapamiento y el análisis.
+- `Tarea2_Colab.ipynb` — Notebook reproducible que instala dependencias, descarga el dataset, compila y ejecuta ambos experimentos y genera los gráficos en Google Colab.
+
+El informe en PDF con la metodología, tablas, gráficos de *speedup*, diagrama de solapamiento y el análisis se entrega por separado.
 
 ## Entorno utilizado
 
